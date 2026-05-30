@@ -1,56 +1,84 @@
-# Threat Hunting in Finance Sector
-## Author: Rukayat Mopelola Lawal
+# Threat Hunting in the Finance Sector with MITRE ATT&CK
 
-### Date: March 2026
-### Framework: MITRE ATT&CK® Enterprise
+**Author:** Rukayat Mopelola Lawal  
+**Date:** March 2026
 
-# Executive Summary
-This project focuses on proactive threat hunting within the Finance industry, leveraging the MITRE ATT&CK framework to identify and analyse Advanced Persistent Threat (APT) groups targeting the sector.  
+---
 
-# Key Objectives:
+## Overview
 
-Understand the MITRE ATT&CK framework and its practical application in threat hunting scenarios. 
+A proactive threat hunting project focused on the finance industry, using the MITRE ATT&CK framework to identify, map, and analyse Advanced Persistent Threat (APT) groups targeting the sector.
 
-Investigate advanced persistent threats (APTs) that are targeting the finance sector by utilising SOCRadar Labs. 
+---
 
-Link the identified APT groups to corresponding tactics, techniques, and procedures (TTPs) in the MITRE ATT&CK Navigator. 
+## Objectives
 
-| APT Group | Origin | Primary Goal | Signature Malware |
-| :--- | :---: | :--- | :--- |
-| **APT38** | North Korea | Financial Theft (SWIFT) | `DYEPACK`, `Hermes` |
-| **APT43** | North Korea | Credential Theft | `BabyShark`, `AppleSeed` |
-| **Cobalt** | Southeast Asia| ATM systems, card processing, payment systems | `Cl0p`, `Trojan.Win32` |
-| **APT41** | China | Espionage & Crypto Theft | `PlugX`, `Winnti` |
+- Understand the MITRE ATT&CK framework and its practical application in threat hunting
+- Identify APT groups targeting the finance sector using SOCRadar Labs
+- Map identified APT groups to their tactics, techniques, and procedures (TTPs) in the MITRE ATT&CK Navigator
+- Conduct comparative analysis to uncover shared attack patterns across threat actors
 
-# Map APTs to TTPs using MITRE Navigator 
-Utilising the MITRE ATT&CK Navigator, individual layers were generated for each of the four identified APT groups with the United Kingdom specified as their operational location. This approach enabled a clear visual representation of the tactics, techniques, and procedures (TTPs) associated with each group. The creation of separate layers facilitated comparative analysis, making it possible to observe the specific methods used by these threat actors and to identify areas of overlap or similarity in their attack patterns targeting the finance sector. 
+---
 
+## Tools & Resources
 
+| Tool | Purpose |
+|------|---------|
+| [SOCRadar Labs](https://socradar.io) | Threat intelligence gathering; identifying finance-sector APTs |
+| [MITRE ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) | Mapping and visualising TTPs per APT group |
+| [MITRE ATT&CK Framework](https://attack.mitre.org) | Structured taxonomy of adversary behaviours |
 
-# Findings 
+---
 
-Analysis revealed several key patterns and trends: 
+## APT Groups Identified
 
-APT groups targeting finance frequently employ tactics such as Initial Access (spear phishing, watering hole attacks), Credential Access (credential dumping, brute force), and Lateral Movement (remote desktop protocol exploitation). 
+Four APT groups were identified via SOCRadar Labs as active threats to financial organisations:
 
-There is significant overlap in TTPs among groups, with spear phishing and credential dumping emerging as the most prevalent techniques. 
+### 1. APT 41
+**Aliases:** Amoeba, BARIUM, BRONZE ATLAS, Blackfly, Brass Typhoon, Double Dragon, Earth Baku, G0044, G0096, Grayfly, HOODOO, LEAD, Leopard Typhoon, Red Kelpie, TA415, TG-2633, WICKED PANDA, WICKED SPIDER, Winnti
 
-Cobalt and Lazarus Group often exploit transactional systems and financial platforms, while APT 41 demonstrates broad targeting of both infrastructure and user accounts. 
+### 2. Lazarus Group
+**Aliases:** APT 38, APT-C-26, Appleworm, BeagleBoyz, Black Artemis, Bluenoroff
 
-Visualisation highlighted clusters of techniques concentrated around persistence and privilege escalation, suggesting adversaries prioritise maintaining access and expanding control once initial compromise is achieved. 
+### 3. Kimsuky
+**Aliases:** MoneyLibra
 
- 
-  
-# Recommendations
+### 4. Cobalt
+**Aliases:** G0080, Cobalt Spider, Cobalt Gang
 
-To remain resilient in 2026, financial organizations must adopt a multi-layered security posture, Regular updates to threat intelligence and continuous review of attack patterns are essential to maintaining resilience against advanced threats. Policy makers are encouraged to facilitate sector-wide sharing of threat intelligence and promote adoption of frameworks like MITRE ATT&CK for structured, collaborative defence. 
+---
 
-# References
+## Methodology
 
-SOCRadar
-MITRE ATT&CK
-Mitre Attack Navigator.
+1. **Framework Study** — Reviewed MITRE ATT&CK structure: Tactics (objectives), Techniques (methods), and Procedures (real-world implementations).
+2. **APT Research** — Used SOCRadar Labs to identify APT groups with a confirmed focus on the finance sector.
+3. **TTP Mapping** — Generated individual ATT&CK Navigator layers for each APT group, scoped to the United Kingdom as the operational location.
+4. **Comparative Analysis** — Overlaid layers to identify shared techniques and clusters of activity.
 
-# License
-### This research was conducted as part of a Cybersecurity Threat Hunting Project (March 2026) by Rukayat Mopelola Lawal.
-  
+---
+
+## Key Findings
+
+- **Most prevalent techniques:** Spear phishing (Initial Access) and credential dumping (Credential Access) appear across multiple groups.
+- **Common tactic categories:** Initial Access, Credential Access, Lateral Movement (notably via RDP exploitation), Persistence, and Privilege Escalation.
+- **Group-specific patterns:**
+  - *Cobalt* and *Lazarus Group* frequently target transactional systems and financial platforms.
+  - *APT 41* demonstrates broad targeting of both infrastructure and individual user accounts.
+- **Visualisation insight:** Techniques cluster heavily around persistence and privilege escalation, suggesting adversaries prioritise maintaining and expanding access after initial compromise.
+
+---
+
+## Recommendations
+
+- Prioritise defences against **phishing and credential theft**
+- Strengthen **lateral movement monitoring** across internal networks
+- Enforce **robust multi-factor authentication** protocols
+- Invest in **targeted employee training**, particularly phishing awareness
+- Maintain **regular threat intelligence updates** to track evolving TTPs
+- Encourage **sector-wide intelligence sharing** and adoption of structured frameworks like MITRE ATT&CK
+
+---
+
+## Conclusion
+
+Mapping APT groups to TTPs via the MITRE ATT&CK framework provides actionable visibility into the finance sector threat landscape. The recurrence of specific techniques across multiple threat actors indicates that financial organisations can significantly reduce risk through layered security controls, continuous monitoring, and collaborative, intelligence-driven defence strategies.
